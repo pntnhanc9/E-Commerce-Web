@@ -139,9 +139,16 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --text-color: #1a162e;
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%)
+      saturate(4042%) hue-rotate(212deg) brightness(90%) contrast(95%);
+}
+
 body {
   font-size: 1.6rem;
   font-family: Gordita, sans-serif;
+  color: var(--text-color);
 }
 
 a {
@@ -153,6 +160,18 @@ button {
   border: none;
   background: transparent;
   outline: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.icon {
+  filter: var(--icon-color);
 }
 
 .row > *, .container-fluid, .container {
@@ -1186,13 +1205,16 @@ button {
     --grid-gutter-y: 90px;
   }
 }
+.top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
+  display: flex;
+  align-items: center;
+}
+
 .header {
   background-color: #eee;
 }
 
 .top-bar {
-  display: flex;
-  align-items: center;
   padding: 30px 0;
 }
 
@@ -1201,8 +1223,6 @@ button {
   margin-right: auto;
 }
 .navbar__list {
-  display: flex;
-  align-items: center;
   gap: 30px;
 }
 .navbar__link {
@@ -1210,8 +1230,6 @@ button {
   font-style: normal;
   font-weight: 500;
   line-height: 1.47;
-  display: flex;
-  align-items: center;
   gap: 6px;
 }
 .navbar__arrow {
@@ -1219,13 +1237,9 @@ button {
 }
 
 .top-act {
-  display: flex;
-  align-items: center;
   gap: 20px;
 }
 .top-act__group {
-  display: flex;
-  align-items: center;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
@@ -1240,12 +1254,12 @@ button {
   height: 50px;
   border-radius: 8px;
   display: flex;
+  cursor: pointer;
 }
 .top-act__btn {
-  display: flex;
-  align-items: center;
   padding: 13px 20px;
   gap: 10px;
+  cursor: pointer;
 }
 .top-act__title {
   font-family: Gordita;
