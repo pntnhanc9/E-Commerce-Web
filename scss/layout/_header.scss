@@ -1,9 +1,11 @@
+@use "../abstracts";
 %flexItemsCenter{
   display: flex;
   align-items: center;
 }
 .header {
   background-color: var(--header-bg-color);
+  
 }
 .top-bar {
   @extend %flexItemsCenter;
